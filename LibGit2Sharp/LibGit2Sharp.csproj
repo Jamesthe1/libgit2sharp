@@ -45,7 +45,7 @@
   </Target>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="setlocal enabledelayedexpansion&#xD;&#xA;set froms[0]=&quot;$(TargetDir) &quot;&#xD;&#xA;set froms[1]=&quot;$(TargetDir)lib\win32\x64 &quot;&#xD;&#xA;set tos[0]=&quot;..\..\GitUpdater\libs &quot;&#xD;&#xA;set tos[1]=&quot;..\..\GitUpdater &quot;&#xD;&#xA;for /l %25%25n in (0,1,1) do (&#xD;&#xA;    robocopy !froms[%25%25n]! !tos[%25%25n]!  *.dll&#xD;&#xA;    if %25errorlevel%25 geq 4 exit %25errorlevel%25&#xD;&#xA;)&#xD;&#xA;exit 0" />
+    <Exec Command="setlocal enabledelayedexpansion&#xD;&#xA;set froms[0]=&quot;$(TargetDir) &quot;&#xD;&#xA;set froms[1]=&quot;$(TargetDir)lib\win32\x64 &quot;&#xD;&#xA;set froms[2]=&quot;$(TargetDir)lib\linux-x64 &quot;&#xD;&#xA;set tos[0]=&quot;..\..\GitUpdater\libs &quot;&#xD;&#xA;set tos[1]=&quot;..\..\GitUpdater &quot;&#xD;&#xA;set tos[2]=%25tos[1]%25&#xD;&#xA;for /l %25%25n in (0,1,2) do (&#xD;&#xA;    robocopy !froms[%25%25n]! !tos[%25%25n]!  *.dll *.so&#xD;&#xA;    if %25errorlevel%25 geq 4 exit %25errorlevel%25&#xD;&#xA;)&#xD;&#xA;exit 0" />
   </Target>
 
 </Project>
