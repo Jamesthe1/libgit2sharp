@@ -60,7 +60,7 @@
   </Target>
 
   <Target Condition="'$(ConfigurationName)_$(TargetFramework)' == 'Release_net472'" Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="robocopy &quot;$(TargetDir) &quot; &quot;$(ProjectDir)\..\..\GitUpdater\libs&quot; $(TargetFileName).dll&#xD;&#xA;robocopy &quot;$(TargetDir)\lib\win32\x64\ &quot; &quot;$(ProjectDir)\..\..\GitUpdater&quot; git2-$(libgit2_hash.Substring(0,7)).dll&#xD;&#xA;robocopy &quot;$(TargetDir)\lib\linux-x64\ &quot; &quot;$(ProjectDir)\..\..\GitUpdater&quot; libgit2-$(libgit2_hash.Substring(0,7)).so&#xD;&#xA;echo > &quot;$(ProjectDir)\..\..\GitUpdater\hash&quot;&#xD;&#xA;if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25" />
+    <Exec Command="robocopy &quot;$(TargetDir) &quot; &quot;$(ProjectDir)\..\..\GitUpdater\libs&quot; $(TargetFileName).dll&#xD;&#xA;robocopy &quot;$(TargetDir)\lib\win32\x64\ &quot; &quot;$(ProjectDir)\..\..\GitUpdater&quot; git2-$(libgit2_hash.Substring(0,7)).dll&#xD;&#xA;robocopy &quot;$(TargetDir)\lib\linux-x64\ &quot; &quot;$(ProjectDir)\..\..\GitUpdater&quot; libgit2-$(libgit2_hash.Substring(0,7)).so&#xD;&#xA;echo $(libgit2_hash.Substring(0,7)) > &quot;$(ProjectDir)\..\..\GitUpdater\hash&quot;&#xD;&#xA;if %25errorlevel%25 leq 4 exit 0 else exit %25errorlevel%25" />
   </Target>
 
 </Project>
