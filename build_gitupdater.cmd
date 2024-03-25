@@ -1,0 +1,1 @@
+dotnet build LibGit2Sharp -c Release
