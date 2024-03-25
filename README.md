@@ -1,4 +1,6 @@
-# LibGit2Sharp
+# LibGit2Sharp - GitUpdater Fork
+
+This is a fork of LibGit2Sharp which has been modified for [GitUpdater](https://github.com/Jamesthe1/GitUpdater).
 
 [![CI](https://github.com/libgit2/libgit2sharp/actions/workflows/ci.yml/badge.svg)](https://github.com/libgit2/libgit2sharp/actions/workflows/ci.yml) 
 [![NuGet version (LibGit2Sharp)](https://img.shields.io/nuget/v/LibGit2Sharp.svg)](https://www.nuget.org/packages/LibGit2Sharp/)
